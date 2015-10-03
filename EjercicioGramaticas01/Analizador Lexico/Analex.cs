@@ -9,7 +9,7 @@ namespace EjercicioGramaticas01.Analizador_Lexico
 
         int numLinea = 1;
         String valcomplex;
-        String[] reservadas = { "if", "while", "do", "for", "class", "else", "true", "double", "final", "String", "int"};
+        String[] reservadas = { "if", "while", "do", "for", "class", "else", "true", "double", "final", "String", "int" };
         List<String> lstPalabrasReservadas = new List<string>();
 
         public void AnalizadorLexico(String nombreArchivo)
@@ -73,7 +73,7 @@ namespace EjercicioGramaticas01.Analizador_Lexico
                         }
                     }
 
-                    Mostrar("NUMERO");                    
+                    Mostrar("NUMERO");
                     continue;
 
                 }
@@ -82,7 +82,7 @@ namespace EjercicioGramaticas01.Analizador_Lexico
                 //Reconocimiento de identificadores y palabras reservadas
                 if (Char.IsLetter(car))
                 {
-                    valcomplex = valcomplex + car;                    
+                    valcomplex = valcomplex + car;
 
                     while (true)
                     {
@@ -100,7 +100,7 @@ namespace EjercicioGramaticas01.Analizador_Lexico
                     {
                         Mostrar("ID");
                     }
-                    
+
                     continue;
                 }
 
@@ -112,12 +112,12 @@ namespace EjercicioGramaticas01.Analizador_Lexico
                     {
                         val = file.Read();
                         car = (char)val;
-                        if (car != '"') { valcomplex = valcomplex + car;}
+                        if (car != '"') { valcomplex = valcomplex + car; }
                         else { break; }
                     }
 
                     Mostrar("CADENA");
-                    
+
                     continue;
                 }
 
@@ -125,17 +125,17 @@ namespace EjercicioGramaticas01.Analizador_Lexico
                 //Reconocimiento de comentarios
                 if (car == '/')
                 {
-                    valcomplex = valcomplex + car;                    
+                    valcomplex = valcomplex + car;
                     val = file.Peek();
                     car = (char)val;
 
                     if (car == '/')
                     {
-                       valcomplex = valcomplex + car;
-                       file.Read();
+                        valcomplex = valcomplex + car;
+                        file.Read();
 
-                       while (true)
-                       {
+                        while (true)
+                        {
                             val = file.Peek();
                             car = (char)val;
                             if (car != '\n' && car != '\r') { valcomplex = valcomplex + car; file.Read(); }
@@ -155,6 +155,8 @@ namespace EjercicioGramaticas01.Analizador_Lexico
                             car = (char)val;
                             valcomplex = valcomplex + car;
 
+                            if (car == '\n') { numLinea++; }
+
                             if (car == '*')
                             {
                                 val = file.Read();
@@ -166,14 +168,15 @@ namespace EjercicioGramaticas01.Analizador_Lexico
 
                         Mostrar("COMENTARIO");
                         continue;
-                    }                  
+                    }
                 }
-               
+
                 // Reconocimiento de operadores
                 valcomplex = valcomplex + car;
                 switch (car)
                 {
                     case '\r': break;
+                    case '=':
                     case '+':
                     case '.':
                     case '-':
@@ -181,8 +184,8 @@ namespace EjercicioGramaticas01.Analizador_Lexico
                     case '/':
                     case ';': Mostrar("OPERADOR"); break;
                     default: Mostrar("DESCONOCIDO"); break;
-                }                 
-                 
+                }
+
             }
         }
 

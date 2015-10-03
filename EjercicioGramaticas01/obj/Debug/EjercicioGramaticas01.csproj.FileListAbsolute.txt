@@ -7,3 +7,6 @@ C:\Users\JuanGuillermo\Desktop\EjercicioGramaticas01\EjercicioGramaticas01\obj\D
 D:\JGGomez\UCC\Compiladores\Codigo\AnalizadorLexico\EjercicioGramaticas01\bin\Debug\EjercicioGramaticas01.exe.config
 D:\JGGomez\UCC\Compiladores\Codigo\AnalizadorLexico\EjercicioGramaticas01\obj\Debug\EjercicioGramaticas01.exe
 D:\JGGomez\UCC\Compiladores\Codigo\AnalizadorLexico\EjercicioGramaticas01\obj\Debug\EjercicioGramaticas01.pdb
+D:\JGGomez\UCC\Compiladores\Codigo\AnalizadorLexico\EjercicioGramaticas01\bin\Debug\EjercicioGramaticas01.exe
+D:\JGGomez\UCC\Compiladores\Codigo\AnalizadorLexico\EjercicioGramaticas01\bin\Debug\EjercicioGramaticas01.pdb
+D:\JGGomez\UCC\Compiladores\Codigo\AnalizadorLexico\EjercicioGramaticas01\obj\Debug\EjercicioGramaticas01.csprojResolveAssemblyReference.cache
